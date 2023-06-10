@@ -22,7 +22,8 @@ import static org.junit.Assert.fail;
 public class MemberRepositoryTest {
 
     @Autowired MemberService memberService;
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
     @Autowired EntityManager em;
 
     @Test
