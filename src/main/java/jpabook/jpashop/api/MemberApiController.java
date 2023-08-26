@@ -40,9 +40,7 @@ public class MemberApiController {
 
         Member member = new Member();
         member.setName(request.getName());
-        Address address = new Address(request.getCity(), request.getStreet(), request.getZipcode());
-        member.setAddress(address);
-
+        member.setAddress(new Address(request.getCity(), request.getStreet(), request.getZipcode()));
         Long id = memberService.join(member);
         return new CreateMemberResponse(id);
     }

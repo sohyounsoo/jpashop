@@ -4,6 +4,7 @@ import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,14 +21,14 @@ public abstract class Item {
     @Column(name = "item_id")
     private Long id;
 
-    protected String name;
-    protected int price;
-    protected int stockQuantity;
+    private String name;
+    private int price;
+    private int stockQuantity;
 
     @ManyToMany(mappedBy = "items")
-    private List<Category> categoryList = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>();
 
-    //==비즈니스로직==//
+    //==비즈니스 로직==//
     /**
      * stock 증가
      */
