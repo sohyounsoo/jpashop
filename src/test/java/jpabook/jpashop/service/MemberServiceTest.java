@@ -9,8 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 
 import static org.junit.Assert.fail;
 
