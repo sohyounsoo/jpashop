@@ -39,11 +39,11 @@ public class MemberService {
 
     @Transactional
     public void update(Long id, String name) {
-        Member member = memberRepository.findOne(id);
+        Member member = memberRepository.findById(id).get();
         member.setName(name);
     }
 
     public Member findOne(Long id) {
-        return memberRepository.findOne(id);
+        return memberRepository.findById(id).get();
     }
 }
